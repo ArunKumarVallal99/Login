@@ -15,19 +15,30 @@ const YourApp = () => {
         <Text style={styles.loginText}>Email</Text>
 
           <View style={styles.inputView}>
-            <TextInput style={styles.inputText}/>
+            <TextInput style={styles.inputText}
+            keyboardType='email-address'
+            textContentType="emailAddress"
+            selectTextOnFocus={true}/>
          </View>
 
         <Text style={styles.loginText}>Password</Text>
+
           <View style={styles.inputView}>
-            <TextInput style={styles.inputText}/>
+            <TextInput style={styles.inputText}
+            keyboardType='visible-password'
+            textContentType='password'
+            secureTextEntry={true}
+            />
           </View>
+
           <Button
+          style={styles.button}
           title="Login"
           color="green"/>
+
       </View>
       
-      <View style={styles.userlogin}>
+      <View style={styles.userLogin}>
         <Text style={styles.user}>New User?</Text>
         <Text style={styles.joinus}>Join US</Text>
       </View>
@@ -40,7 +51,7 @@ const YourApp = () => {
 const styles=StyleSheet.create({
 container:{
   padding:20,
- // alignItems:'center',
+  //alignItems:'center',
   
 },
 tinyLogo:{
@@ -55,40 +66,44 @@ heading:{
   //backgroundColor:'blue',
 },
 inputArea:{
-  borderRadius: 5,
+  borderRadius:5,
+  overflow: 'hidden',
   shadowColor: '#000',
   shadowOffset: { width: 0, height: 3 },
-  shadowOpacity: 1,
+  shadowOpacity: 100,
   shadowRadius: 2,
   elevation: 3,
   padding:20,
 },
 loginText:{
   fontSize:20,
-//  paddingTop:10,
   paddingBottom:5,
   marginRight:180,
 },
 inputView:{
-paddingBottom:20,
+  paddingBottom:20,
 },
 inputText:{
   borderColor:'grey',
   borderBottomWidth:1,
   flex:1,
   height:40,
-
- 
 },
-userlogin:{
+userLogin:{
+  padding:30,
+  justifyContent:'center',
   flexDirection:'row',
+
+},
+button:{
+borderRadius:8,
+borderWidth:5,
+borderColor:'green',
 },
 user:{
-  paddingTop:20,
   fontSize:17,
-},
+},  
 joinus:{
-  paddingTop:20,
   fontSize:17,
   color:'green',
 },
