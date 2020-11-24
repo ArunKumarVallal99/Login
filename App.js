@@ -65,9 +65,9 @@ inputArea:{
   padding:40,
 },
 loginText:{
-  fontSize:15,
-  paddingTop:10,
-  paddingBottom:5,
+  fontSize:20,
+//  paddingTop:10,
+  //paddingBottom:5,
   marginRight:180,
 },
 inputText:{
