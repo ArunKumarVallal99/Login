@@ -1,53 +1,60 @@
 import React from 'react';
-import { StyleSheet, Image,Text, TextInput, View, Button, ScrollView } from 'react-native';
+import { StyleSheet, StatusBar,Image,Text, TextInput, View, Button, ScrollView, SafeAreaView } from 'react-native';
 
 const YourApp = () => {
   return (
-    <ScrollView>
-    <View style={styles.container}>
+   <>
+    <StatusBar barStyle="dark-content" />
+      <SafeAreaView>
+       <ScrollView>
+          <View style={styles.container}> 
+            <View  style={styles.heading}>
+              <Image style={styles.tinyLogo} source={{uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>
+              <Text style={{fontSize:40,color:'grey', paddingTop:10}}>LOGIN</Text>
+            </View>
 
-      <View  style={styles.heading}>
-        <Image style={styles.tinyLogo} source={{uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>
-        <Text style={{fontSize:40,color:'grey', paddingTop:10}}>LOGIN</Text>
-      </View>
+            <View style={styles.inputArea}>
+              <Text style={styles.loginText}>Email</Text>
 
-      <View style={styles.inputArea}>
-        <Text style={styles.loginText}>Email</Text>
+              <View style={styles.inputView}>
+                  <TextInput style={styles.inputText}
+                  keyboardType='email-address'
+                  placeholder='example@mail.com'
+                  textContentType="emailAddress"
+                  underlineColorAndroid='grey'
+                  autoFocus={true}/>
+              </View>
 
-          <View style={styles.inputView}>
-            <TextInput style={styles.inputText}
-            keyboardType='email-address'
-            textContentType="emailAddress"
-            selectTextOnFocus={true}/>
-         </View>
+              <Text style={styles.loginText}>Password</Text>
 
-        <Text style={styles.loginText}>Password</Text>
+                <View style={styles.inputView}>
+                  <TextInput style={styles.inputText}
+                  keyboardType='visible-password'
+                  placeholder='rVwTf8f1jhGkjt12sd'
+                  textContentType='password'
+                  secureTextEntry={true}
+                  underlineColorAndroid='grey'/>
+                </View>
 
-          <View style={styles.inputView}>
-            <TextInput style={styles.inputText}
-            keyboardType='visible-password'
-            textContentType='password'
-            secureTextEntry={true}
-            />
+                <Button
+                style={styles.button}
+                title="Login"
+                color="green"/>
+
+            </View>
+            
+            <View style={styles.userLogin}>
+              <Text style={styles.user}>New User?</Text>
+              <Text style={styles.joinus}>Join US</Text>
+            </View>
+          
           </View>
 
-          <Button
-          style={styles.button}
-          title="Login"
-          color="green"/>
-
-      </View>
-      
-      <View style={styles.userLogin}>
-        <Text style={styles.user}>New User?</Text>
-        <Text style={styles.joinus}>Join US</Text>
-      </View>
-
-    
-    </View>
-    </ScrollView>
+        </ScrollView>
+      </SafeAreaView>
+  </>
   );
-}
+};
 const styles=StyleSheet.create({
 container:{
   padding:20,
@@ -84,8 +91,8 @@ inputView:{
   paddingBottom:20,
 },
 inputText:{
-  borderColor:'grey',
-  borderBottomWidth:1,
+  //borderColor:'grey',
+ // borderBottomWidth:1,
   flex:1,
   height:40,
 },
