@@ -95,7 +95,7 @@ inputView:{
 },
 inputText:{
   //borderColor:'grey',
- // borderBottomWidth:1,
+  //borderBottomWidth:1,
   flex:1,
   height:40,
 },
@@ -106,9 +106,9 @@ userLogin:{
 
 },
 button:{
-borderRadius:8,
-borderWidth:5,
-borderColor:'green',
+  borderRadius:8,
+  borderWidth:5,
+  borderColor:'green',
 },
 user:{
   fontSize:17,
