@@ -1,25 +1,30 @@
 import React from 'react';
-import { StyleSheet, Image,Text, TextInput, View, Button } from 'react-native';
+import { StyleSheet, Image,Text, TextInput, View, Button, ScrollView } from 'react-native';
 
 const YourApp = () => {
   return (
+    <ScrollView>
     <View style={styles.container}>
 
       <View  style={styles.heading}>
         <Image style={styles.tinyLogo} source={{uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>
-        <Text style={{fontSize:40,color:'grey'}}>LOGIN</Text>
+        <Text style={{fontSize:40,color:'grey', paddingTop:10}}>LOGIN</Text>
       </View>
 
       <View style={styles.inputArea}>
         <Text style={styles.loginText}>Email</Text>
-        <TextInput style={styles.inputText}/>
+
+          <View style={styles.inputView}>
+            <TextInput style={styles.inputText}/>
+         </View>
+
         <Text style={styles.loginText}>Password</Text>
-        <TextInput style={styles.inputText}/>
-        <View  style={styles.button}>
+          <View style={styles.inputView}>
+            <TextInput style={styles.inputText}/>
+          </View>
           <Button
           title="Login"
           color="green"/>
-        </View>
       </View>
       
       <View style={styles.userlogin}>
@@ -29,12 +34,13 @@ const YourApp = () => {
 
     
     </View>
+    </ScrollView>
   );
 }
 const styles=StyleSheet.create({
 container:{
-  //padding:20,
-  alignItems:'center',
+  padding:20,
+ // alignItems:'center',
   
 },
 tinyLogo:{
@@ -45,38 +51,34 @@ tinyLogo:{
 heading:{
   alignItems:'center',
   paddingTop:60,
-  //paddingLeft:125,
-  paddingBottom:40,
+  paddingBottom:20,
   //backgroundColor:'blue',
 },
 inputArea:{
-  //borderWidth: 1,
-  borderRadius: 3,
-  //borderColor: '#ddd',
-  //borderBottomWidth: 0,
+  borderRadius: 5,
   shadowColor: '#000',
   shadowOffset: { width: 0, height: 3 },
   shadowOpacity: 1,
   shadowRadius: 2,
   elevation: 3,
-  marginLeft: 1,
-  //marginRight: 5,
-  //marginTop: 10,
-  padding:40,
+  padding:20,
 },
 loginText:{
   fontSize:20,
 //  paddingTop:10,
-  //paddingBottom:5,
+  paddingBottom:5,
   marginRight:180,
+},
+inputView:{
+paddingBottom:20,
 },
 inputText:{
   borderColor:'grey',
-  borderBottomWidth:2,
-},
-button:{
-  paddingTop:20,
-  borderRadius:100,
+  borderBottomWidth:1,
+  flex:1,
+  height:40,
+
+ 
 },
 userlogin:{
   flexDirection:'row',
