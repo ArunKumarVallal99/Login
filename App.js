@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, StatusBar,Image,Text, TextInput, View, Button, ScrollView, SafeAreaView } from 'react-native';
+import { StyleSheet, StatusBar,Image,Text, TextInput, View, Button, ScrollView, SafeAreaView,Alert } from 'react-native';
 
 const YourApp = () => {
+  
   return (
    <>
     <StatusBar barStyle="dark-content" />
@@ -39,7 +40,8 @@ const YourApp = () => {
                 <Button
                 style={styles.button}
                 title="Login"
-                color="green"/>
+                color="green"
+                onPress={() => Alert.alert('Please Wait')}/>
 
             </View>
             
@@ -55,6 +57,7 @@ const YourApp = () => {
   </>
   );
 };
+
 const styles=StyleSheet.create({
 container:{
   padding:20,
